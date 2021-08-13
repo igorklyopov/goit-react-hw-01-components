@@ -4,12 +4,12 @@ import TransactionHistoryItem from "./TransactionHistoryItem";
 
 const TransactionHistory = ({ items = [] }) => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+    <table className={styles.transactionHistory}>
+      <thead className={styles.thead}>
+        <tr className={styles.thead}>
+          <th className={styles.thCell}>Type</th>
+          <th className={styles.thCell}>Amount</th>
+          <th className={styles.thCell}>Currency</th>
         </tr>
       </thead>
 
@@ -29,16 +29,15 @@ const TransactionHistory = ({ items = [] }) => {
   );
 };
 
-// TransactionHistory.propTypes = {
-//   avatar: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   tag: PropTypes.string.isRequired,
-//   location: PropTypes.string.isRequired,
-//   stats: PropTypes.shape({
-//      followers: PropTypes.number.isRequired,
-//      views: PropTypes.number.isRequired,
-//      likes: PropTypes.number.isRequired,
-//   }),
-// }
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default TransactionHistory;
