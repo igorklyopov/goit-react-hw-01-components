@@ -10,7 +10,6 @@ import FriendList from "./components/FriendList/FriendList";
 
 function App() {
   return (
-    // <h1>Learn React</h1>
     <Container>
       <Profile
         name={user.name}

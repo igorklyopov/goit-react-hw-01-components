@@ -5,15 +5,10 @@ const FriendList = ({ friends }) => {
   return (
     <ul className={styles.friendList}>
       {friends.map(({ id, avatar, name, isOnline }) => (
-        <li
-          key={id}
-          className={
-            isOnline
-              ? `${styles.item} ${styles.isOnline}`
-              : `${styles.item} ${styles.isOffline}`
-          }
-        >
-          <span className={styles.status}></span>
+        <li key={id} className={styles.item}>
+          <span
+            className={isOnline ? `${styles.isOnline}` : `${styles.isOffline}`}
+          ></span>
           <img
             className={styles.avatar}
             src={avatar}

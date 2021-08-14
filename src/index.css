@@ -12,6 +12,9 @@
   /* typography */
   --medium-font-weight: 500;
   --bold-font-weight: 700;
+
+  /* animation */
+  --basic-transition-anim: transform 200ms ease-in 10ms;
 }
 
 body {
